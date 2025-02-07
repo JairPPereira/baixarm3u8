@@ -4,8 +4,8 @@ from moviepy.editor import VideoFileClip
 video_path = "video.mp4"  # Substitua pelo caminho do seu vídeo
 
 # Tempo de início e fim do corte (em segundos)
-start_time = 10  # Início aos 10 segundos
-end_time = 20    # Fim aos 20 segundos
+start_time = 7  # Início aos 10 segundos
+end_time = 33    # Fim aos 20 segundos
 
 # Carrega o vídeo
 video = VideoFileClip(video_path)
