@@ -9,6 +9,6 @@ def baixar_video(url, caminho_destino):
         ydl.download([url])
 
 # Exemplo de uso
-url_video = 'https://youtu.be/zx0C23HTN5Q?si=gmsiU69jZEHAjSiM'
+url_video = 'https://youtu.be/RqwOTsz8Fds?si=MZTqgz4RbtTcoW_n'
 caminho_destino = 'D:/baixarm3u8/'  # Defina o caminho onde quer salvar o vídeo
 baixar_video(url_video, caminho_destino)
