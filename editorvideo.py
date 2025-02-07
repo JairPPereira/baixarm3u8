@@ -1,19 +1,16 @@
-from moviepy.editor import VideoFileClip
+import ffmpeg
 
-# Caminho do vídeo de entrada
-video_path = "video.mp4"  # Substitua pelo caminho do seu vídeo
+# Caminho do vídeo original
+video_input = "video.mp4"
+
+# Caminho do vídeo recortado
+video_output = "video_cortado.mp4"
 
 # Tempo de início e fim do corte (em segundos)
-start_time = 7  # Início aos 10 segundos
-end_time = 33    # Fim aos 20 segundos
+start_time = 7  # Exemplo: Iniciar no segundo 10
+end_time = 33    # Exemplo: Terminar no segundo 20
 
-# Carrega o vídeo
-video = VideoFileClip(video_path)
+# Comando para cortar o vídeo
+ffmpeg.input(video_input, ss=start_time, to=end_time).output(video_output).run()
 
-# Recorta o trecho desejado
-video_recortado = video.subclip(start_time, end_time)
-
-# Salva o novo vídeo
-video_recortado.write_videofile("video_cortado.mp4", codec="libx264", fps=30)
-
-print("Vídeo recortado salvo como 'video_cortado.mp4'")
+print("Vídeo cortado com sucesso!")
