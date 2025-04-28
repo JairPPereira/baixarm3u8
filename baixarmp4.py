@@ -9,6 +9,6 @@ def baixar_video(url, caminho_destino):
         ydl.download([url])
 
 # Exemplo de uso
-url_video = 'https://youtu.be/RqwOTsz8Fds?si=MZTqgz4RbtTcoW_n'
+url_video = 'https://pipocadesal5.store/movie/mousasticoshvily/mrtv15xx/320716.mp4?token=TxRaWEpeRw5HUVoCBglYBAgHAVpUXFcNAlBRAVIFX1BVBQAADg4HAgQVFURDTEtUUQ49UFNGDgcABQMDVE9EREdTQGZQUkcORwYNVQYBDhMcQRZQWgEWDgMCAAZUV1AABg8eG0lfARZfFQtWCAsPExxBB0FDAUZaU1lrVgcVD1JRFAgbGxpHWwtoXQNdWVdVEllACRVIFl1BRRYIDBYKXRgUUFBNRARAABUDRAgKChMcQQFWQgpARksXDhA3MEQdFlNKTVxYFl0KWRtcElVJBRJPQFBEO0ZRQUFGVwMOA0MWDBAJGxpHWQRPZgVfVldUUxcLVlkXFg4QBhYeQA4JX11CXUtmRgxQRw1XE1xURA=='
 caminho_destino = 'D:/baixarm3u8/'  # Defina o caminho onde quer salvar o vídeo
 baixar_video(url_video, caminho_destino)
