@@ -1,17 +1,20 @@
-import ffmpeg
+import subprocess
 
-input_audio = 'audio.mp3'
-input_image = 'imagem.jpg'
+input_audio = 'passado1.mp3'
+input_image = 'JPMUSIC.png'
 output_video = 'saida_video.mp4'
 
-(
-    ffmpeg
-    .input(input_image, loop=1, framerate=1)
-    .output(input_audio, output_video, 
-            vcodec='libx264', 
-            acodec='aac', 
-            audio_bitrate='192k', 
-            shortest=None, 
-            pix_fmt='yuv420p')
-    .run()
-)
+cmd = [
+    'ffmpeg',
+    '-loop', '1',
+    '-i', input_image,
+    '-i', input_audio,
+    '-c:v', 'libx264',
+    '-c:a', 'aac',
+    '-b:a', '192k',
+    '-shortest',
+    '-pix_fmt', 'yuv420p',
+    output_video
+]
+
+subprocess.run(cmd, check=True)
