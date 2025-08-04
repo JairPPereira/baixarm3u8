@@ -1,2 +1,3 @@
-from moviepy.editor import AudioFileClip, ImageClip
-print("✅ MoviePy importado com sucesso!")
+import moviepy
+import os
+print(os.listdir(os.path.dirname(moviepy.__file__)))
