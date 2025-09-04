@@ -1,4 +1,5 @@
 import requests
+import sys
 
 url = "http://sinalprivado.info:80/movie/632035/GqGcFV4ntu/655644.mp4"
 nome_arquivo = "filme.mp4"
@@ -15,16 +16,26 @@ headers = {
 print(f"⬇️ Baixando {url}...")
 
 response = requests.get(url, headers=headers, stream=True, allow_redirects=True)
+total_length = response.headers.get('content-length')
 
-# Verifica se o retorno realmente é vídeo
-print("Content-Type:", response.headers.get("Content-Type"))
-
-if "video" not in response.headers.get("Content-Type", ""):
-    print("⚠️ O servidor não está entregando o vídeo. Pode ser necessário login/token.")
+if total_length is None:
+    print("⚠️ Não foi possível obter o tamanho do arquivo.")
+    total_length = 0
 else:
-    with open(nome_arquivo, "wb") as f:
-        for chunk in response.iter_content(chunk_size=8192):
-            if chunk:
-                f.write(chunk)
+    total_length = int(total_length)
 
-    print(f"✅ Download concluído: {nome_arquivo}")
+baixado = 0
+with open(nome_arquivo, "wb") as f:
+    for chunk in response.iter_content(chunk_size=8192):
+        if chunk:
+            f.write(chunk)
+            baixado += len(chunk)
+            if total_length:
+                done = int(50 * baixado / total_length)  # 50 = tamanho da barra
+                sys.stdout.write(
+                    f"\r[{'=' * done}{' ' * (50-done)}] "
+                    f"{baixado / 1024 / 1024:.2f} MB / {total_length / 1024 / 1024:.2f} MB"
+                )
+                sys.stdout.flush()
+
+print(f"\n✅ Download concluído: {nome_arquivo}")
