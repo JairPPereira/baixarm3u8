@@ -1,7 +1,7 @@
 import requests
 import sys
 
-url = "http://dns.carnes.ink:8080/movie/ZdEtSNbXb37d/xbb2ns98aprW/205455.mp4"
+url = "http://sinalprivado.info:80/movie/632035/GqGcFV4ntu/883955.mp4"
 nome_arquivo = "filme.mp4"
 
 # Cabeçalhos simulando navegador real
