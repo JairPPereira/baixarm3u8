@@ -1,8 +1,8 @@
 import requests
 import sys
 
-url = "http://sinalprivado.info:80/movie/632035/GqGcFV4ntu/884370.mp4"
-nome_arquivo = "884370a.mp4"
+url = "http://sinalprivado.info:80/movie/632035/GqGcFV4ntu/846504.mp4"
+nome_arquivo = "846504.mp4"
 
 # Cabeçalhos simulando navegador real
 headers = {
