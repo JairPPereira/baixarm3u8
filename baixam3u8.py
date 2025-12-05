@@ -2,7 +2,7 @@ import m3u8_To_MP4
 
 if __name__ == '__main__':
     # URL do arquivo M3U8
-    m3u8_url = 'https://cdn77-vid.xvideos-cdn.com/u6GysQahVBsq2ydI_qf74g==,1763826028/videos/hls/5e/70/3d/5e703d64d72943a4cf6a36b05a722876/hls.m3u8'
+    m3u8_url = 'https://cdn77-vid.xvideos-cdn.com/_iexR_dX9AD84eKa3cV2Ug==,1764969716/videos/hls/c9/5c/f2/c95cf24d73bba83eb655aa2b2640127c-1/hls.m3u8'
     
     # Baixar vídeo usando múltiplas threads
     m3u8_To_MP4.multithread_download(m3u8_url)
